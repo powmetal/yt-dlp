@@ -47,7 +47,7 @@ from ..utils import (
 
 
 class BilibiliBaseIE(InfoExtractor):
-    _HEADERS = {'Referer': 'https://www.bilibili.com/'}
+    _HEADERS = {'Referer': 'https://www.bilibili.tv/'}
     _FORMAT_ID_RE = re.compile(r'-(\d+)\.m4s\?')
     _WBI_KEY_CACHE_TIMEOUT = 30  # exact expire timeout is unclear, use 30s for one session
     _wbi_key_cache = {}
@@ -307,7 +307,7 @@ class BiliBiliIE(BilibiliBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/(?:video/|festival/[^/?#]+\?(?:[^#]*&)?bvid=)[aAbB][vV](?P<id>[^/?#&]+)'
 
     _TESTS = [{
-        'url': 'https://www.bilibili.com/video/BV13x41117TL',
+        'url': 'https://www.bilibili.tv/video/BV13x41117TL',
         'info_dict': {
             'id': 'BV13x41117TL',
             'title': '阿滴英文｜英文歌分享#6 "Closer',
@@ -327,7 +327,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
     }, {
         'note': 'old av URL version',
-        'url': 'http://www.bilibili.com/video/av1074402/',
+        'url': 'http://www.bilibili.tv/video/av1074402/',
         'info_dict': {
             'id': 'BV11x411K7CN',
             'ext': 'mp4',
@@ -348,7 +348,7 @@ class BiliBiliIE(BilibiliBaseIE):
         'params': {'skip_download': True},
     }, {
         'note': 'Anthology',
-        'url': 'https://www.bilibili.com/video/BV1bK411W797',
+        'url': 'https://www.bilibili.tv/video/BV1bK411W797',
         'info_dict': {
             'id': 'BV1bK411W797',
             'title': '物语中的人物是如何吐槽自己的OP的',
@@ -375,7 +375,7 @@ class BiliBiliIE(BilibiliBaseIE):
         }],
     }, {
         'note': 'Specific page of Anthology',
-        'url': 'https://www.bilibili.com/video/BV1bK411W797?p=1',
+        'url': 'https://www.bilibili.tv/video/BV1bK411W797?p=1',
         'info_dict': {
             'id': 'BV1bK411W797_p1',
             'ext': 'mp4',
@@ -394,7 +394,7 @@ class BiliBiliIE(BilibiliBaseIE):
             '_old_archive_ids': ['bilibili 498159642_part1'],
         },
     }, {
-        'url': 'https://www.bilibili.com/video/av8903802/',
+        'url': 'https://www.bilibili.tv/video/av8903802/',
         'info_dict': {
             'id': 'BV13x41117TL',
             'ext': 'mp4',
@@ -417,7 +417,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
     }, {
         'note': 'video has chapter',
-        'url': 'https://www.bilibili.com/video/BV1vL411G7N7/',
+        'url': 'https://www.bilibili.tv/video/BV1vL411G7N7/',
         'info_dict': {
             'id': 'BV1vL411G7N7',
             'ext': 'mp4',
@@ -439,7 +439,7 @@ class BiliBiliIE(BilibiliBaseIE):
         'params': {'skip_download': True},
     }, {
         'note': 'video redirects to festival page',
-        'url': 'https://www.bilibili.com/video/BV1wP4y1P72h',
+        'url': 'https://www.bilibili.tv/video/BV1wP4y1P72h',
         'info_dict': {
             'id': 'BV1wP4y1P72h',
             'ext': 'mp4',
@@ -457,7 +457,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
     }, {
         'note': 'newer festival video',
-        'url': 'https://www.bilibili.com/festival/2023honkaiimpact3gala?bvid=BV1ay4y1d77f',
+        'url': 'https://www.bilibili.tv/festival/2023honkaiimpact3gala?bvid=BV1ay4y1d77f',
         'info_dict': {
             'id': 'BV1ay4y1d77f',
             'ext': 'mp4',
@@ -475,7 +475,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
     }, {
         'note': 'legacy flv/mp4 video',
-        'url': 'https://www.bilibili.com/video/BV1ms411Q7vw/?p=4',
+        'url': 'https://www.bilibili.tv/video/BV1ms411Q7vw/?p=4',
         'info_dict': {
             'id': 'BV1ms411Q7vw_p4',
             'title': '[搞笑]【动画】云南方言快乐生产线出品 p04 新烧包谷之漫游桃花岛',
@@ -504,7 +504,7 @@ class BiliBiliIE(BilibiliBaseIE):
         }],
     }, {
         'note': 'legacy mp4-only video',
-        'url': 'https://www.bilibili.com/video/BV1nx411u79K',
+        'url': 'https://www.bilibili.tv/video/BV1nx411u79K',
         'info_dict': {
             'id': 'BV1nx411u79K',
             'ext': 'mp4',
@@ -524,7 +524,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
     }, {
         'note': 'interactive/split-path video',
-        'url': 'https://www.bilibili.com/video/BV1af4y1H7ga/',
+        'url': 'https://www.bilibili.tv/video/BV1af4y1H7ga/',
         'info_dict': {
             'id': 'BV1af4y1H7ga',
             'title': '【互动游戏】花了大半年时间做的自我介绍~请查收！！',
@@ -563,7 +563,7 @@ class BiliBiliIE(BilibiliBaseIE):
         }],
     }, {
         'note': '301 redirect to bangumi link',
-        'url': 'https://www.bilibili.com/video/BV1TE411f7f1',
+        'url': 'https://www.bilibili.tv/video/BV1TE411f7f1',
         'info_dict': {
             'id': '288525',
             'title': '李永乐老师 钱学森弹道和乘波体飞行器是什么？',
@@ -583,7 +583,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
     }, {
         'note': 'video has subtitles, which requires login',
-        'url': 'https://www.bilibili.com/video/BV12N4y1M7rh',
+        'url': 'https://www.bilibili.tv/video/BV12N4y1M7rh',
         'info_dict': {
             'id': 'BV12N4y1M7rh',
             'ext': 'mp4',
@@ -605,7 +605,7 @@ class BiliBiliIE(BilibiliBaseIE):
         'params': {'listsubtitles': True},
         'skip': 'login required for subtitle',
     }, {
-        'url': 'https://www.bilibili.com/video/BV1jL41167ZG/',
+        'url': 'https://www.bilibili.tv/video/BV1jL41167ZG/',
         'info_dict': {
             'id': 'BV1jL41167ZG',
             'title': '一场大火引发的离奇死亡！古典推理经典短篇集《不可能犯罪诊断书》！',
@@ -613,7 +613,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
         'skip': 'supporter-only video',
     }, {
-        'url': 'https://www.bilibili.com/video/BV1Ks411f7aQ/',
+        'url': 'https://www.bilibili.tv/video/BV1Ks411f7aQ/',
         'info_dict': {
             'id': 'BV1Ks411f7aQ',
             'title': '【BD1080P】狼与香辛料I【华盟】',
@@ -621,7 +621,7 @@ class BiliBiliIE(BilibiliBaseIE):
         },
         'skip': 'login required',
     }, {
-        'url': 'https://www.bilibili.com/video/BV1GJ411x7h7/',
+        'url': 'https://www.bilibili.tv/video/BV1GJ411x7h7/',
         'info_dict': {
             'id': 'BV1GJ411x7h7',
             'title': '【官方 MV】Never Gonna Give You Up - Rick Astley',
@@ -630,7 +630,7 @@ class BiliBiliIE(BilibiliBaseIE):
         'skip': 'geo-restricted',
     }, {
         'note': 'has - in the last path segment of the url',
-        'url': 'https://www.bilibili.com/festival/bh3-7th?bvid=BV1tr4y1f7p2&',
+        'url': 'https://www.bilibili.tv/festival/bh3-7th?bvid=BV1tr4y1f7p2&',
         'only_matching': True,
     }]
 
@@ -673,7 +673,7 @@ class BiliBiliIE(BilibiliBaseIE):
         if is_anthology and not part_id and self._yes_playlist(video_id, video_id):
             return self.playlist_from_matches(
                 page_list_json, video_id, title, ie=BiliBiliIE,
-                getter=lambda entry: f'https://www.bilibili.com/video/{video_id}?p={entry["page"]}')
+                getter=lambda entry: f'https://www.bilibili.tv/video/{video_id}?p={entry["page"]}')
 
         if is_anthology:
             part_id = part_id or 1
@@ -798,7 +798,7 @@ class BiliBiliBangumiIE(BilibiliBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/bangumi/play/ep(?P<id>\d+)'
 
     _TESTS = [{
-        'url': 'https://www.bilibili.com/bangumi/play/ep21495/',
+        'url': 'https://www.bilibili.tv/bangumi/play/ep21495/',
         'info_dict': {
             'id': '21495',
             'ext': 'mp4',
@@ -817,7 +817,7 @@ class BiliBiliBangumiIE(BilibiliBaseIE):
             'thumbnail': r're:^https?://.*\.(jpg|jpeg|png)$',
         },
     }, {
-        'url': 'https://www.bilibili.com/bangumi/play/ep267851',
+        'url': 'https://www.bilibili.tv/bangumi/play/ep267851',
         'info_dict': {
             'id': '267851',
             'ext': 'mp4',
@@ -838,7 +838,7 @@ class BiliBiliBangumiIE(BilibiliBaseIE):
         'skip': 'Geo-restricted',
     }, {
         'note': 'a making-of which falls outside main section',
-        'url': 'https://www.bilibili.com/bangumi/play/ep345120',
+        'url': 'https://www.bilibili.tv/bangumi/play/ep345120',
         'info_dict': {
             'id': '345120',
             'ext': 'mp4',
@@ -932,7 +932,7 @@ class BiliBiliBangumiIE(BilibiliBaseIE):
 class BiliBiliBangumiMediaIE(BilibiliBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/bangumi/media/md(?P<id>\d+)'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/bangumi/media/md24097891',
+        'url': 'https://www.bilibili.tv/bangumi/media/md24097891',
         'info_dict': {
             'id': '24097891',
             'title': 'CAROLE & TUESDAY',
@@ -940,7 +940,7 @@ class BiliBiliBangumiMediaIE(BilibiliBaseIE):
         },
         'playlist_mincount': 25,
     }, {
-        'url': 'https://www.bilibili.com/bangumi/media/md1565/',
+        'url': 'https://www.bilibili.tv/bangumi/media/md1565/',
         'info_dict': {
             'id': '1565',
             'title': '攻壳机动队 S.A.C. 2nd GIG',
@@ -987,7 +987,7 @@ class BiliBiliBangumiMediaIE(BilibiliBaseIE):
 class BiliBiliBangumiSeasonIE(BilibiliBaseIE):
     _VALID_URL = r'(?x)https?://(?:www\.)?bilibili\.com/bangumi/play/ss(?P<id>\d+)'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/bangumi/play/ss26801',
+        'url': 'https://www.bilibili.tv/bangumi/play/ss26801',
         'info_dict': {
             'id': '26801',
             'title': '鬼灭之刃',
@@ -995,7 +995,7 @@ class BiliBiliBangumiSeasonIE(BilibiliBaseIE):
         },
         'playlist_mincount': 26,
     }, {
-        'url': 'https://www.bilibili.com/bangumi/play/ss2251',
+        'url': 'https://www.bilibili.tv/bangumi/play/ss2251',
         'info_dict': {
             'id': '2251',
             'title': '玲音',
@@ -1058,7 +1058,7 @@ class BilibiliCheeseBaseIE(BilibiliBaseIE):
             'formats': self.extract_formats(play_info),
             'extractor_key': BilibiliCheeseIE.ie_key(),
             'extractor': BilibiliCheeseIE.IE_NAME,
-            'webpage_url': f'https://www.bilibili.com/cheese/play/ep{ep_id}',
+            'webpage_url': f'https://www.bilibili.tv/cheese/play/ep{ep_id}',
             **traverse_obj(episode_info, {
                 'episode': ('title', {str}),
                 'title': {lambda v: v and join_nonempty('index', 'title', delim=' - ', from_dict=v)},
@@ -1087,7 +1087,7 @@ class BilibiliCheeseBaseIE(BilibiliBaseIE):
 class BilibiliCheeseIE(BilibiliCheeseBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/cheese/play/ep(?P<id>\d+)'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/cheese/play/ep229832',
+        'url': 'https://www.bilibili.tv/cheese/play/ep229832',
         'info_dict': {
             'id': '229832',
             'ext': 'mp4',
@@ -1114,7 +1114,7 @@ class BilibiliCheeseIE(BilibiliCheeseBaseIE):
 class BilibiliCheeseSeasonIE(BilibiliCheeseBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/cheese/play/ss(?P<id>\d+)'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/cheese/play/ss5918',
+        'url': 'https://www.bilibili.tv/cheese/play/ss5918',
         'info_dict': {
             'id': '5918',
             'title': '【限时五折】新闻系学不到：马督工教你做自媒体',
@@ -1140,7 +1140,7 @@ class BilibiliCheeseSeasonIE(BilibiliCheeseBaseIE):
         }],
         'params': {'playlist_items': '1'},
     }, {
-        'url': 'https://www.bilibili.com/cheese/play/ss5918',
+        'url': 'https://www.bilibili.tv/cheese/play/ss5918',
         'info_dict': {
             'id': '5918',
             'title': '【限时五折】新闻系学不到：马督工教你做自媒体',
@@ -1249,7 +1249,7 @@ class BilibiliSpaceVideoIE(BilibiliSpaceBaseIE):
 
         def get_entries(page_data):
             for entry in traverse_obj(page_data, ('list', 'vlist')) or []:
-                yield self.url_result(f'https://www.bilibili.com/video/{entry["bvid"]}', BiliBiliIE, entry['bvid'])
+                yield self.url_result(f'https://www.bilibili.tv/video/{entry["bvid"]}', BiliBiliIE, entry['bvid'])
 
         metadata, paged_list = self._extract_playlist(fetch_page, get_metadata, get_entries)
         return self.playlist_result(paged_list, playlist_id)
@@ -1283,7 +1283,7 @@ class BilibiliSpaceAudioIE(BilibiliSpaceBaseIE):
         def get_entries(page_data):
             # data is None when the playlist is empty
             for entry in page_data.get('data') or []:
-                yield self.url_result(f'https://www.bilibili.com/audio/au{entry["id"]}', BilibiliAudioIE, entry['id'])
+                yield self.url_result(f'https://www.bilibili.tv/audio/au{entry["id"]}', BilibiliAudioIE, entry['id'])
 
         metadata, paged_list = self._extract_playlist(fetch_page, get_metadata, get_entries)
         return self.playlist_result(paged_list, playlist_id)
@@ -1292,7 +1292,7 @@ class BilibiliSpaceAudioIE(BilibiliSpaceBaseIE):
 class BilibiliSpaceListBaseIE(BilibiliSpaceBaseIE):
     def _get_entries(self, page_data, bvid_keys, ending_key='bvid'):
         for bvid in traverse_obj(page_data, (*variadic(bvid_keys, (str, bytes, dict, set)), ..., ending_key, {str})):
-            yield self.url_result(f'https://www.bilibili.com/video/{bvid}', BiliBiliIE, bvid)
+            yield self.url_result(f'https://www.bilibili.tv/video/{bvid}', BiliBiliIE, bvid)
 
     def _get_uploader(self, uid, playlist_id):
         webpage = self._download_webpage(f'https://space.bilibili.com/{uid}', playlist_id, fatal=False)
@@ -1448,7 +1448,7 @@ class BilibiliFavoritesListIE(BilibiliSpaceListBaseIE):
         },
         'playlist_mincount': 22,
     }, {
-        'url': 'https://www.bilibili.com/medialist/detail/ml1103407912',
+        'url': 'https://www.bilibili.tv/medialist/detail/ml1103407912',
         'only_matching': True,
     }]
 
@@ -1481,7 +1481,7 @@ class BilibiliFavoritesListIE(BilibiliSpaceListBaseIE):
 class BilibiliWatchlaterIE(BilibiliSpaceListBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/watchlater/?(?:[?#]|$)'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/watchlater/#/list',
+        'url': 'https://www.bilibili.tv/watchlater/#/list',
         'info_dict': {
             'id': r're:\d+',
             'title': '稍后再看',
@@ -1503,7 +1503,7 @@ class BilibiliWatchlaterIE(BilibiliSpaceListBaseIE):
 class BilibiliPlaylistIE(BilibiliSpaceListBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/(?:medialist/play|list)/(?P<id>\w+)'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/list/1958703906?sid=547718',
+        'url': 'https://www.bilibili.tv/list/1958703906?sid=547718',
         'info_dict': {
             'id': '5_547718',
             'title': '直播回放',
@@ -1514,7 +1514,7 @@ class BilibiliPlaylistIE(BilibiliSpaceListBaseIE):
         },
         'playlist_mincount': 513,
     }, {
-        'url': 'https://www.bilibili.com/list/1958703906?sid=547718&oid=687146339&bvid=BV1DU4y1r7tz',
+        'url': 'https://www.bilibili.tv/list/1958703906?sid=547718&oid=687146339&bvid=BV1DU4y1r7tz',
         'info_dict': {
             'id': 'BV1DU4y1r7tz',
             'ext': 'mp4',
@@ -1534,14 +1534,14 @@ class BilibiliPlaylistIE(BilibiliSpaceListBaseIE):
         },
         'params': {'noplaylist': True},
     }, {
-        'url': 'https://www.bilibili.com/medialist/play/1958703906?business=space_series&business_id=547718&desc=1',
+        'url': 'https://www.bilibili.tv/medialist/play/1958703906?business=space_series&business_id=547718&desc=1',
         'info_dict': {
             'id': '5_547718',
         },
         'playlist_mincount': 513,
         'skip': 'redirect url',
     }, {
-        'url': 'https://www.bilibili.com/list/ml1103407912',
+        'url': 'https://www.bilibili.tv/list/ml1103407912',
         'info_dict': {
             'id': '3_1103407912',
             'title': '【V2】（旧）',
@@ -1553,14 +1553,14 @@ class BilibiliPlaylistIE(BilibiliSpaceListBaseIE):
         },
         'playlist_mincount': 22,
     }, {
-        'url': 'https://www.bilibili.com/medialist/play/ml1103407912',
+        'url': 'https://www.bilibili.tv/medialist/play/ml1103407912',
         'info_dict': {
             'id': '3_1103407912',
         },
         'playlist_mincount': 22,
         'skip': 'redirect url',
     }, {
-        'url': 'https://www.bilibili.com/list/watchlater',
+        'url': 'https://www.bilibili.tv/list/watchlater',
         'info_dict': {
             'id': r're:2_\d+',
             'title': '稍后再看',
@@ -1570,7 +1570,7 @@ class BilibiliPlaylistIE(BilibiliSpaceListBaseIE):
         'playlist_mincount': 0,
         'skip': 'login required',
     }, {
-        'url': 'https://www.bilibili.com/medialist/play/watchlater',
+        'url': 'https://www.bilibili.tv/medialist/play/watchlater',
         'info_dict': {'id': 'watchlater'},
         'playlist_mincount': 0,
         'skip': 'redirect url & login required',
@@ -1592,7 +1592,7 @@ class BilibiliPlaylistIE(BilibiliSpaceListBaseIE):
 
         bvid = traverse_obj(parse_qs(url), ('bvid', 0))
         if not self._yes_playlist(list_id, bvid):
-            return self.url_result(f'https://www.bilibili.com/video/{bvid}', BiliBiliIE)
+            return self.url_result(f'https://www.bilibili.tv/video/{bvid}', BiliBiliIE)
 
         webpage = self._download_webpage(url, list_id)
         initial_state = self._search_json(r'window\.__INITIAL_STATE__\s*=', webpage, 'initial state', list_id)
@@ -1636,7 +1636,7 @@ class BilibiliCategoryIE(InfoExtractor):
     _MAX_RESULTS = 1000000
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/v/[a-zA-Z]+\/[a-zA-Z]+'
     _TESTS = [{
-        'url': 'https://www.bilibili.com/v/kichiku/mad',
+        'url': 'https://www.bilibili.tv/v/kichiku/mad',
         'info_dict': {
             'id': 'kichiku: mad',
             'title': 'kichiku: mad',
@@ -1658,7 +1658,7 @@ class BilibiliCategoryIE(InfoExtractor):
 
         for video in video_list:
             yield self.url_result(
-                'https://www.bilibili.com/video/{}'.format(video['bvid']), 'BiliBili', video['bvid'])
+                'https://www.bilibili.tv/video/{}'.format(video['bvid']), 'BiliBili', video['bvid'])
 
     def _entries(self, category, subcategory, query):
         # map of categories : subcategories : RIDs
@@ -1760,14 +1760,14 @@ class BilibiliAudioBaseIE(InfoExtractor):
         if not query:
             query = {'sid': sid}
         return self._download_json(
-            'https://www.bilibili.com/audio/music-service-c/web/' + path,
+            'https://www.bilibili.tv/audio/music-service-c/web/' + path,
             sid, query=query)['data']
 
 
 class BilibiliAudioIE(BilibiliAudioBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/audio/au(?P<id>\d+)'
     _TEST = {
-        'url': 'https://www.bilibili.com/audio/au1003142',
+        'url': 'https://www.bilibili.tv/audio/au1003142',
         'md5': 'fec4987014ec94ef9e666d4d158ad03b',
         'info_dict': {
             'id': '1003142',
@@ -1837,7 +1837,7 @@ class BilibiliAudioIE(BilibiliAudioBaseIE):
 class BilibiliAudioAlbumIE(BilibiliAudioBaseIE):
     _VALID_URL = r'https?://(?:www\.)?bilibili\.com/audio/am(?P<id>\d+)'
     _TEST = {
-        'url': 'https://www.bilibili.com/audio/am10624',
+        'url': 'https://www.bilibili.tv/audio/am10624',
         'info_dict': {
             'id': '10624',
             'title': '每日新曲推荐（每日11:00更新）',
@@ -1858,7 +1858,7 @@ class BilibiliAudioAlbumIE(BilibiliAudioBaseIE):
             if not sid:
                 continue
             entries.append(self.url_result(
-                'https://www.bilibili.com/audio/au' + sid,
+                'https://www.bilibili.tv/audio/au' + sid,
                 BilibiliAudioIE.ie_key(), sid))
 
         if entries:
